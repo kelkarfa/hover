@@ -13,6 +13,7 @@ html, body {
         font-size: 13px;
         color: #F1F5F8;
         background-color:#679159;
+        
     }
     *
     {
@@ -45,10 +46,17 @@ html, body {
     left:30px;
     top:30px;
     color:#283823;
-    text-align:left;
+    text-align:center;
     font-size:34px;
     font-weight:bold;
     font-family:Arial, Helvetica, sans-serif;
+    transition: transform .2s;
+    cursor: pointer;
+    }
+    #headerTitle:hover {
+      transform: scale(1.5);
+      color: #3e8e41;
+
     }
     
     #headerSubText
@@ -57,11 +65,13 @@ html, body {
     left:33px;
     top:30px;
     color:#679159;
-    text-align:left;
+    text-align:center;
     font-size:16px;
     font-weight:bold;
     font-family:Arial, Helvetica, sans-serif;
+   
     }
+    
     
     
     #bar
@@ -73,6 +83,8 @@ html, body {
     line-height:55px;
     padding-left:20px;
     padding-right:20px;
+    position: relative;
+    
     }
     
     #bar a
@@ -80,14 +92,73 @@ html, body {
     font-size:13px;
     font-weight:bold;
     color:#FBFDFB;
-    margin-left:28px;
+    margin-left:20px;
     margin-right:28px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    }
+    #bar .animation{
+      position: absolute;
+      height: 100%;
+      top: 0;
+      z-index: 0;
+      background: #1abc9c;
+      width: 70px;
+      border-radius: 8px;
+      transition: all .5s ease 0s;
+    }
+    a:nth-child(1){
+      width: 70px;
+    }
+    #bar .start-home, a:nth-child(1):hover ~.animation {
+      width: 70px;
+      left: 20px;
+    }
+    a:nth-child(2){
+      width: 100px;
+    }
+    #bar a:nth-child(2):hover ~.animation {
+      width: 100px;
+      left: 100px;
+    }
+    a:nth-child(3){
+      width: 100px;
+    }
+    #bar a:nth-child(3):hover ~.animation {
+      width: 100px;
+      left: 210px;
+    }
+    a:nth-child(4){
+      width: 100px;
+    }
+    #bar a:nth-child(4):hover ~.animation {
+      width: 100px;
+      left: 310px;
+    }
+    a:nth-child(5){
+      width: 100px;
+    }
+    #bar a:nth-child(5):hover ~.animation {
+      width: 100px;
+      left: 420px;
+    }
+    a:nth-child(6){
+      width: 100px;
+    }
+    #bar a:nth-child(6):hover ~.animation {
+      width: 100px;
+      left: 520px;
+    }
+    a:nth-child(7){
+      width: 110px;
+    }
+    #bar a:nth-child(7):hover ~.animation {
+      width: 110px;
+      left: 600px;
     }
     
-    #bar a:hover
-    {
-    color:#C7E0C2;
-    }
     
     
     
@@ -131,12 +202,97 @@ html, body {
     a
     {
     text-decoration:none;
-    color:#152413;
-    }
     
-    a:hover
-    {
-    color:#597A41;
+    }
+    .slide a {
+      font-size: 20px;
+      color: #882;
+      border-bottom: 2px dotted sandybrown;
+      padding: 3px 0;
+      transition: all 500ms ease-in-out;
+    }
+    .slide a:hover {
+      color: sandybrown;
+      border-bottom: 2px solid sandybrown;
+      padding: 3px 20%;
+    }
+    .box{
+      background-color: burlywood;
+      width: 100px;
+      padding: 5px;
+    }
+    .three {
+      transform-style: preserve-3d;
+      transition: .6s;
+      width: 120px;
+      cursor: pointer;
+    }
+    .three:hover{
+      transform: translate(40px);
+      background: brown;
+      border-radius: 5px;
+      padding: 5px;
+      
+    }
+    .one {
+      width: 150px;
+      animation-duration: 5s;
+      animation-name: move;
+      animation-iteration-count: infinite;
+      animation-timing-function:ease;
+      animation-play-state:running;
+      animation-fill-mode: forwards;
+      animation-duration:20s;
+      animation-direction: normal;
+    }
+    @keyframes move {
+      0%{transform: translate(0px, 0px);
+        color: coral;
+        }
+      50%{transform: translate(450px, 0px);
+        color:green;
+      }
+     100%{transform: translate(0px, 0px);
+      color: coral;
+      }
+    }
+    .two {
+      width: 200px;
+      animation-duration: 5s;
+      animation-name: bounce;
+      animation-iteration-count: 1;
+      animation-timing-function:ease;
+      animation-play-state:running;
+      animation-fill-mode: forwards;
+      animation-duration:20s;
+      animation-direction: normal;
+    }
+    @keyframes bounce {
+      0%{transform: translate(0px, 0px);
+        color: coral;
+        }
+      50%{transform: translate(450px, 0px);
+        color:green;
+      }
+     100%{transform: translate(0px, 0px);
+      color: coral;
+      }
+    }
+    .hid {
+      display: none;
+      background-color:#3e8e41;
+      padding: 10px;
+      border-radius: 20px;
+      
+    }
+    span:hover + .hid{
+      display: block;
+    }
+    span {
+      color: orchid;
+      font-size: large;
+      cursor: pointer;
+      
     }
     
     
